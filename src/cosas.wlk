@@ -28,12 +28,16 @@ object plancha {
 	method esElectrodomestico() { return true }	
 }
 
-object kiloMilanesasRebozadas {
+object kiloMilangas {
 	var property precio = 260
+	method esComida() { return true }
+	method esElectrodomestico() { return false }
 }
 
-object botellaSalsaDeTomates {
+object salsaDeTomates {
 	var property precio = 90
+	method esComida() { return true }
+	method esElectrodomestico() { return false }
 }
 
 object microondas {
@@ -82,8 +86,8 @@ object packDeComida {
 
 object packDeRegalo {
 	const pack = []
-	method agregarAlPack(cosa) {
-		pack.add(cosa)
+	method agregarAlPack(cosas) {
+		pack.add(cosas)
 	}
 	method esComida() {
 		return pack.all({cosas => cosas.esComida()})
